@@ -3,12 +3,15 @@
 ## Criando um container com MySQL
 
 ```
-docker run -p 6033:3306 --name=docker-mysql env=MYSQL_ROOT_PASSWORD=root env=MYSQL_PASSWORD=root env=MYSQL_DATABASE=mydatabase mysql
+docker run -p 6033:3306 --name=docker-mysql -e MYSQL_ROOT_PASSWORD=root -e MYSQL_PASSWORD=root -e MYSQL_DATABASE=mydatabase mysql
 ```
 O comando acima executa as seguintes funções
 - Ininia um container com uma imagem mysql com o nome de docker-mysql 
 - adiciona usuario e senha como root
 - cria um banco de dados com o nome de mydatabase na porta 6033
+- se caso precisar restartar o container -> docker start docker-mysql
+
+
 
 ## Testando a aplicação
 
